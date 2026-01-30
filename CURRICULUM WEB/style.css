@@ -1,0 +1,458 @@
+/* =========================
+   ACCESIBILIDAD
+   ========================= */
+
+/* Enlace para saltar navegación (solo visible al hacer focus con teclado) */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #2563eb;
+    color: #ffffff;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+    border-radius: 4px;
+}
+
+.skip-link:focus {
+    top: 6px;
+}
+
+/* =========================
+   ESTILOS GENERALES
+   ========================= */
+
+/* Estilos base del body */
+body {
+    margin: 0; /* Elimina márgenes por defecto */
+    font-family: Arial, Helvetica, sans-serif; /* Fuente principal */
+    background-color: #f3f5f9; /* Fondo gris claro */
+    color: #1f2933; /* Color principal del texto */
+    cursor: url('pokemon32.png') 16 16, auto; /* Cursor personalizado */
+}
+
+/* Enlaces generales */
+a {
+    color: #2563eb;
+}
+
+/* =========================
+   CABECERA (HEADER)
+   ========================= */
+
+header {
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 20px 40px; /* Espaciado interno */
+    text-align: center; /* Centra el contenido */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05); /* Sombra inferior */
+    position: relative;
+    z-index: 1000;
+}
+
+/* Nombre principal */
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+/* Subtítulo */
+header p {
+    margin: 5px 0 15px;
+    color: #4b5563;
+}
+
+/* =========================
+   NAVEGACIÓN
+   ========================= */
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Enlaces del menú */
+nav a {
+    text-decoration: none;
+    color: #2563eb;
+    font-weight: bold;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Subrayado animado */
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #2563eb;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after,
+nav a:focus::after {
+    width: 100%;
+}
+
+/* Botón hamburguesa (oculto en escritorio) */
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* =========================
+   BOTONES
+   ========================= */
+
+/* Botón descarga CV */
+.btn-download {
+    display: inline-block;
+    margin-top: 12px;
+    background-color: #2563eb;
+    color: #ffffff;
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 6px 14px rgba(37,99,235,0.14);
+    transition: background-color 150ms ease, transform 150ms ease;
+}
+
+.btn-download:hover,
+.btn-download:focus {
+    background-color: #1e4fd8;
+    transform: translateY(-2px);
+}
+
+/* Botón submit */
+.btn-submit {
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.btn-submit:hover,
+.btn-submit:focus {
+    background-color: #1d4ed8;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.btn-submit:active {
+    transform: translateY(1px);
+}
+
+/* Botón azul "Ver código" en proyectos */
+.btn-repo {
+    display: inline-block;
+    margin-top: 12px;              /* Separación del texto */
+    padding: 8px 14px;             /* Tamaño del botón */
+    background-color: #2563eb;     /* Azul principal */
+    color: #ffffff;                /* Texto blanco */
+    text-decoration: none;         /* Quita subrayado */
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;            /* Bordes suaves */
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+    transition: 
+        background-color 0.2s ease,
+        transform 0.15s ease,
+        box-shadow 0.2s ease;
+}
+
+/* Hover */
+.btn-repo:hover {
+    background-color: #1d4ed8;     /* Azul más oscuro */
+    transform: translateY(-2px);   /* Efecto flotante */
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+}
+
+/* Click */
+.btn-repo:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 8px rgba(37, 99, 235, 0.25);
+}
+
+
+/* =========================
+   CONTENIDO PRINCIPAL
+   ========================= */
+
+main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Separación entre secciones */
+section {
+    margin-bottom: 40px;
+}
+
+/* Títulos de sección */
+section h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+/* =========================
+   TARJETAS (CARDS)
+   ========================= */
+
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 25px 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Elevación al pasar el ratón */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Títulos dentro de tarjetas */
+.card h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+/* Texto dentro de tarjetas */
+.card p {
+    margin: 0 0 10px;
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.6;
+}
+
+/* =========================
+   EXPERIENCIA PROFESIONAL
+   ========================= */
+
+#experiencia .card {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Separación entre trabajos */
+}
+
+/* =========================
+   LISTAS
+   ========================= */
+
+ul {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+ul li {
+    margin-bottom: 6px;
+}
+
+/* =========================
+   HABILIDADES
+   ========================= */
+
+.skill {
+    margin-bottom: 15px;
+}
+
+.skill-name {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.progress-bar {
+    background-color: #e5e7eb;
+    border-radius: 10px;
+    height: 8px;
+    overflow: hidden;
+}
+
+.progress {
+    background: linear-gradient(90deg, #2563eb 0%, #3b82f6 100%);
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.8s ease;
+}
+
+/* =========================
+   PROYECTOS
+   ========================= */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.project {
+    background-color: #f8fafc;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.project img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+/* =========================
+   SOBRE MÍ
+   ========================= */
+
+.bio-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #ffffff;
+    box-shadow: 0 6px 18px rgba(16,24,40,0.12);
+    transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.profile-img:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(16,24,40,0.18);
+}
+
+/* =========================
+   CONTACTO
+   ========================= */
+
+#contacto i {
+    color: #2563eb;
+    margin-right: 8px;
+    width: 16px;
+    text-align: center;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    color: #4b5563;
+    font-size: 14px;
+    box-shadow: 0 -2px 6px rgba(0,0,0,0.05);
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+/* Tablet y móvil */
+@media (max-width: 768px) {
+
+    header {
+        padding: 15px;
+        box-shadow: #121213 0px 6px 18px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    /* Mostrar botón hamburguesa */
+    .menu-toggle {
+        display: block;
+        margin: 10px auto;
+        color: #2563eb;
+    }
+
+    /* Menú oculto por defecto */
+    nav {
+        display: none;
+        flex-direction: column;
+        background-color: #ffffff;
+        width: 100%;
+        padding: 10px 0;
+        border-top: 1px solid #e5e7eb;
+        gap: 10px;
+    }
+
+    /* Menú activo (JS) */
+    nav.activo {
+        display: flex;
+    }
+
+    nav a {
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .bio-card {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Móvil */
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    main {
+        padding: 0 10px;
+        margin: 15px auto;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    section h2 {
+        font-size: 18px;
+    }
+
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+}
